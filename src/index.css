@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 60px;
+  grid-gap: 30px 30px;
+}
+
+.grid-item {
+  color: #fff;
+  border-radius: 15px;
+}
+
+p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}

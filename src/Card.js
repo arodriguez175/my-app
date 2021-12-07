@@ -1,9 +1,20 @@
 import React from "react";
-import "./Card.js";
+import { ReactComponent as Icon } from "./images/icon-work.svg";
+import "./Card.css";
 
 class Card extends React.Component {
   render() {
-    return <p>Icon</p>;
+    const activityTitle = this.props.activityTitle || "";
+    return (
+      <article class="background-card" id={activityTitle.toLowerCase()}>
+        <Icon />
+        <div class="card-body">
+          <p class="activity-titles">{activityTitle}</p>
+          <p class="time">{this.props.time}hrs</p>
+          <p class="previous-time">Previous {this.props.previousTime}hrs</p>
+        </div>
+      </article>
+    );
   }
 }
 
