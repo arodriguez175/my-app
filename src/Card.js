@@ -6,12 +6,12 @@ class Card extends React.Component {
   render() {
     const activityTitle = this.props.activityTitle || "";
     return (
-      <article class="background-card" id={activityTitle.toLowerCase()}>
+      <article className="background-card" id={activityTitle.toLowerCase()}>
         <Icon />
-        <div class="card-body">
-          <p class="activity-titles">{activityTitle}</p>
-          <p class="time">{this.props.time}hrs</p>
-          <p class="previous-time">Previous {this.props.previousTime}hrs</p>
+        <div className="card-body">
+          <p className="activity-titles">{activityTitle}</p>
+          <p className="time">{this.props.time}hrs</p>
+          <p className="previous-time">Previous {this.props.previousTime}hrs</p>
         </div>
       </article>
     );
