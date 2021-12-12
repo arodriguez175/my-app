@@ -1,11 +1,19 @@
 import React from "react";
 import { ReactComponent as WorkIcon } from "./images/icon-work.svg";
 import { ReactComponent as PlayIcon } from "./images/icon-play.svg";
+import { ReactComponent as StudyIcon } from "./images/icon-study.svg";
+import { ReactComponent as ExerciseIcon } from "./images/icon-exercise.svg";
+import { ReactComponent as SocialIcon } from "./images/icon-social.svg";
+import { ReactComponent as SelfCareIcon } from "./images/icon-self-care.svg";
 import "./Card.css";
 
 const icons = {
   work: <WorkIcon />,
   play: <PlayIcon />,
+  study: <StudyIcon />,
+  exercise: <ExerciseIcon />,
+  social: <SocialIcon />,
+  selfcare: <SelfCareIcon />,
 };
 
 class Card extends React.Component {

@@ -22,7 +22,7 @@ ReactDOM.render(
         <Card activityTitle="Social" time={1} previousTime={3} />
       </div>
       <div class="grid-item">
-        <Card activityTitle="Self-Care" time={0} previousTime={1} />
+        <Card activityTitle="SelfCare" time={0} previousTime={1} />
       </div>
     </div>
   </React.StrictMode>,
