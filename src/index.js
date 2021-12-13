@@ -4,30 +4,58 @@ import "./index.css";
 import Card from "./Card";
 import Profile from "./Profile";
 
+let timeSpentData = {
+  daily: [
+    {
+      activityType: "work",
+      currentHours: 5,
+      previousHours: 7,
+    },
+    {
+      activityType: "play",
+      currentHours: 1,
+      previousHours: 2,
+    },
+    {
+      activityType: "study",
+      currentHours: 0,
+      previousHours: 1,
+    },
+    {
+      activityType: "exercise",
+      currentHours: 1,
+      previousHours: 1,
+    },
+    {
+      activityType: "social",
+      currentHours: 1,
+      previousHours: 3,
+    },
+    {
+      activityType: "selfcare",
+      currentHours: 0,
+      previousHours: 1,
+    },
+  ],
+};
+
 ReactDOM.render(
   <React.StrictMode>
     <div class="grid-container">
       <div class="grid-item" id="profile-item">
         <Profile />
       </div>
-      <div class="grid-item">
-        <Card activityTitle="Work" time={5} previousTime={7} />
-      </div>
-      <div class="grid-item">
-        <Card activityTitle="Play" time={1} previousTime={2} />
-      </div>
-      <div class="grid-item">
-        <Card activityTitle="Study" time={0} previousTime={1} />
-      </div>
-      <div class="grid-item">
-        <Card activityTitle="Exercise" time={1} previousTime={1} />
-      </div>
-      <div class="grid-item">
-        <Card activityTitle="Social" time={1} previousTime={3} />
-      </div>
-      <div class="grid-item">
-        <Card activityTitle="SelfCare" time={0} previousTime={1} />
-      </div>
+      {timeSpentData.daily.map((item) => {
+        return (
+          <div class="grid-item">
+            <Card
+              activityTitle={item.activityType}
+              time={item.currentHours}
+              previousTime={item.previousHours}
+            />
+          </div>
+        );
+      })}
     </div>
   </React.StrictMode>,
   document.getElementById("root")
