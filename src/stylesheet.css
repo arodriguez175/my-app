@@ -1,0 +1,128 @@
+body {
+  background-color: hsl(226, 43%, 10%);
+}
+
+.profile-card {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+}
+
+.top {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+}
+
+.profile-card img {
+  width: 25%;
+  padding: 25px;
+}
+
+p {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+.profile-card p {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 7px;
+}
+
+.report-for {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.name {
+  font-weight: 200;
+  font-size: 35px;
+  padding-bottom: 70px;
+}
+
+.profile-card-options {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.profile-card-options p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 60px;
+  grid-gap: 30px 30px;
+}
+
+.grid-item {
+  color: #fff;
+  border-radius: 15px;
+}
+
+.card-body {
+  border-radius: 15px;
+  background-color: hsl(235, 46%, 20%);
+  padding-top: 13px;
+  padding-bottom: 13px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+}
+
+.card-body p {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-left: 25px;
+}
+
+#item1 {
+  grid-row: 1 / 3;
+}
+
+.background-card {
+  border-radius: 15px;
+  height: 235px;
+  position: relative;
+}
+
+.background-card img {
+  height: 79px;
+  position: absolute;
+  right: 0;
+}
+
+#work {
+  background-color: hsl(15, 100%, 70%);
+}
+
+#play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+#study {
+  background-color: hsl(348, 100%, 68%);
+}
+
+#exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+
+#social {
+  background-color: hsl(264, 64%, 52%);
+}
+
+#self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.activity-titles {
+  font-size: 18px;
+}
+
+.time {
+  font-size: 300%;
+}

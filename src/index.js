@@ -2,10 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Card from "./Card";
+import Profile from "./Profile";
 
 ReactDOM.render(
   <React.StrictMode>
     <div class="grid-container">
+      <div class="grid-item" id="profile-item">
+        <Profile />
+      </div>
       <div class="grid-item">
         <Card activityTitle="Work" time={5} previousTime={7} />
       </div>

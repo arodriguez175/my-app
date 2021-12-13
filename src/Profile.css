@@ -1,0 +1,42 @@
+.profile-card {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 15px;
+  height: 100%;
+}
+
+.top {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+}
+
+.profile-card img {
+  width: 25%;
+  padding: 25px;
+}
+
+.profile-card p {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 7px;
+}
+
+.report-for {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.name {
+  font-weight: 200;
+  font-size: 35px;
+  padding-bottom: 70px;
+}
+
+.profile-card-options {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.profile-card-options p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
