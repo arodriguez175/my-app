@@ -18,6 +18,7 @@ class Profile extends React.Component {
 
         <div>
           <div class="profile-card-options">
+            {/* <button onClick={appState.currentView = 'daily'}>Daily</p> */}
             <p>Daily</p>
             <p>Weekly</p>
             <p>Monthly</p>
