@@ -67,13 +67,46 @@ let timeSpentData = {
       previousHours: 1,
     },
   ],
+  monthly: [
+    {
+      activityType: "work",
+      currentHours: 103,
+      previousHours: 128,
+    },
+    {
+      activityType: "play",
+      currentHours: 23,
+      previousHours: 29,
+    },
+    {
+      activityType: "study",
+      currentHours: 13,
+      previousHours: 19,
+    },
+    {
+      activityType: "exercise",
+      currentHours: 11,
+      previousHours: 18,
+    },
+    {
+      activityType: "social",
+      currentHours: 21,
+      previousHours: 23,
+    },
+    {
+      activityType: "selfcare",
+      currentHours: 7,
+      previousHours: 11,
+    },
+  ],
 };
 
 class App extends React.Component {
   // TODO: add state to App component, store the current view we would like to have (daily/weekly/monthly)
-  /* state = {
-    currentView: 'daily',
+  /*state = {
+    currentView: 'daily', 'weekly', 'monthly',
   }*/
+
   render() {
     return (
       <div class="grid-container">
