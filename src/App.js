@@ -38,33 +38,33 @@ let timeSpentData = {
   weekly: [
     {
       activityType: "work",
-      currentHours: 5,
-      previousHours: 7,
+      currentHours: 32,
+      previousHours: 36,
     },
     {
       activityType: "play",
-      currentHours: 1,
-      previousHours: 2,
+      currentHours: 10,
+      previousHours: 8,
     },
     {
       activityType: "study",
-      currentHours: 0,
-      previousHours: 1,
+      currentHours: 4,
+      previousHours: 7,
     },
     {
       activityType: "exercise",
-      currentHours: 1,
-      previousHours: 1,
+      currentHours: 4,
+      previousHours: 5,
     },
     {
       activityType: "social",
-      currentHours: 1,
-      previousHours: 3,
+      currentHours: 5,
+      previousHours: 10,
     },
     {
       activityType: "selfcare",
-      currentHours: 0,
-      previousHours: 1,
+      currentHours: 2,
+      previousHours: 2,
     },
   ],
   monthly: [
@@ -103,9 +103,9 @@ let timeSpentData = {
 
 class App extends React.Component {
   // TODO: add state to App component, store the current view we would like to have (daily/weekly/monthly)
-  /*state = {
-    currentView: 'daily', 'weekly', 'monthly',
-  }*/
+  state = {
+    currentView: "daily",
+  };
 
   render() {
     return (
@@ -113,8 +113,8 @@ class App extends React.Component {
         <div class="grid-item" id="profile-item">
           <Profile />
         </div>
-        {/* {timeSpentData[this.state.currentView].map((item) => { */}
-        {timeSpentData.daily.map((item) => {
+
+        {timeSpentData[this.state.currentView].map((item) => {
           return (
             <div class="grid-item">
               <Card
