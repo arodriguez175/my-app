@@ -3,6 +3,10 @@ import "./Profile.css";
 import profileImage from "./images/image-jeremy.png";
 
 class Profile extends React.Component {
+  appState = () => {
+    this.setState({ currentView: this.state.currentView.daily });
+  };
+
   render() {
     return (
       <article className="profile-card">
@@ -18,7 +22,7 @@ class Profile extends React.Component {
 
         <div>
           <div class="profile-card-options">
-            {/* <button onClick={appState.currentView = 'daily'}>Daily</p> */}
+            {<button onClick={(appState.currentView = "daily")}>Daily</button>}
             <p>Daily</p>
             <p>Weekly</p>
             <p>Monthly</p>
