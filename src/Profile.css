@@ -40,3 +40,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 7px;
+  font-size: 14px;
+}

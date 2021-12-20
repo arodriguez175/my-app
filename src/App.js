@@ -103,15 +103,26 @@ let timeSpentData = {
 
 class App extends React.Component {
   // TODO: add state to App component, store the current view we would like to have (daily/weekly/monthly)
-  state = {
-    currentView: "daily",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentView: "daily",
+    };
+
+    this.changeView = this.changeView.bind(this);
+  }
+
+  changeView(view) {
+    this.setState({
+      currentView: view,
+    });
+  }
 
   render() {
     return (
       <div class="grid-container">
         <div class="grid-item" id="profile-item">
-          <Profile />
+          <Profile changeViewHandler={this.changeView} />
         </div>
 
         {timeSpentData[this.state.currentView].map((item) => {
