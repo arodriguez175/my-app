@@ -48,6 +48,10 @@ button {
   color: #fff;
   padding-left: 25px;
   padding-right: 25px;
-  margin-top: 7px;
+  margin-top: 15px;
   font-size: 14px;
+}
+
+button:hover {
+  cursor: pointer;
 }
