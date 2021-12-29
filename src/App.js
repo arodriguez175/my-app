@@ -119,6 +119,20 @@ class App extends React.Component {
   }
 
   render() {
+    let previousLabel;
+    switch (this.state.currentView) {
+      case "daily":
+        previousLabel = "Previous Hours - ";
+        break;
+      case "weekly":
+        previousLabel = "Last Week - ";
+        break;
+      case "monthly":
+        previousLabel = "Last Month - ";
+        break;
+      default:
+        previousLabel = "Previous Hours - ";
+    }
     return (
       <div class="grid-container">
         <div class="grid-item" id="profile-item">
@@ -132,6 +146,7 @@ class App extends React.Component {
                 activityTitle={item.activityType}
                 time={item.currentHours}
                 previousTime={item.previousHours}
+                previousTimeLabel={previousLabel}
               />
             </div>
           );
