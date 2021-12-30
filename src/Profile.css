@@ -45,11 +45,15 @@ button {
   display: block;
   border: none;
   background-color: transparent;
-  color: #fff;
+  color: #b3a7e6;
   padding-left: 25px;
   padding-right: 25px;
   margin-top: 15px;
   font-size: 14px;
+}
+
+button:focus {
+  color: #fff;
 }
 
 button:hover {
