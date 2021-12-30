@@ -9,9 +9,16 @@
   border-radius: 15px;
 }
 
+.image-container {
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+}
+
 .profile-card img {
   width: 25%;
-  padding: 25px;
+  border: 5px solid #fff;
+  border-radius: 100%;
 }
 
 .profile-card p {

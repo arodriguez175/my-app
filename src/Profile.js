@@ -8,7 +8,9 @@ class Profile extends React.Component {
     return (
       <article className="profile-card">
         <div class="top">
-          <img src={profileImage} />
+          <div className="image-container">
+            <img src={profileImage} />
+          </div>
           <p class="report-for">Report for</p>
 
           <p class="name">
