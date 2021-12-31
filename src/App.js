@@ -102,7 +102,6 @@ let timeSpentData = {
 };
 
 class App extends React.Component {
-  // TODO: add state to App component, store the current view we would like to have (daily/weekly/monthly)
   constructor(props) {
     super(props);
     this.state = {

@@ -4,12 +4,6 @@
   position: relative;
 }
 
-.background-card img {
-  height: 79px;
-  position: absolute;
-  right: 0;
-}
-
 #work {
   background-color: hsl(15, 100%, 70%);
 }
@@ -61,4 +55,11 @@
 
 .previous-time {
   color: #c0b9e6;
+}
+
+.iconClass {
+  height: 79px;
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
 }

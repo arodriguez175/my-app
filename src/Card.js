@@ -23,7 +23,7 @@ class Card extends React.Component {
     return (
       <article className="background-card" id={activityTitle.toLowerCase()}>
         {/* get an icon for the activity */}
-        {icons[activityTitle.toLowerCase()]}
+        <div className="iconClass">{icons[activityTitle.toLowerCase()]}</div>
         <div className="card-body">
           <p className="activity-titles">{activityTitle}</p>
           <p className="time">{this.props.time}hrs</p>
