@@ -5,6 +5,7 @@ import profileImage from "./images/image-jeremy.png";
 class Profile extends React.Component {
   render() {
     let changeView = this.props.changeViewHandler;
+    let views = ["daily", "weekly", "monthly"];
     return (
       <article className="profile-card">
         <div class="top">
@@ -21,27 +22,16 @@ class Profile extends React.Component {
 
         <div>
           <div class="profile-card-options">
-            <button
-              onClick={() => {
-                changeView("daily");
-              }}
-            >
-              Daily
-            </button>
-            <button
-              onClick={() => {
-                changeView("weekly");
-              }}
-            >
-              Weekly
-            </button>
-            <button
-              onClick={() => {
-                changeView("monthly");
-              }}
-            >
-              Monthly
-            </button>
+            {views.map((view) => (
+              <button
+                className={view === this.props.currentView ? "current" : ""}
+                onClick={() => {
+                  changeView(view);
+                }}
+              >
+                {view}
+              </button>
+            ))}
           </div>
         </div>
       </article>

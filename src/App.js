@@ -135,7 +135,7 @@ class App extends React.Component {
     return (
       <div class="grid-container">
         <div class="grid-item" id="profile-item">
-          <Profile changeViewHandler={this.changeView} />
+          <Profile changeViewHandler={this.changeView} currentView={this.state.currentView} />
         </div>
 
         {timeSpentData[this.state.currentView].map((item) => {
