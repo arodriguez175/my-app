@@ -5,96 +5,96 @@ import Profile from "./Profile";
 let timeSpentData = {
   daily: [
     {
-      activityType: "work",
+      activityType: "Work",
       currentHours: 5,
       previousHours: 7,
     },
     {
-      activityType: "play",
+      activityType: "Play",
       currentHours: 1,
       previousHours: 2,
     },
     {
-      activityType: "study",
+      activityType: "Study",
       currentHours: 0,
       previousHours: 1,
     },
     {
-      activityType: "exercise",
+      activityType: "Exercise",
       currentHours: 1,
       previousHours: 1,
     },
     {
-      activityType: "social",
+      activityType: "Social",
       currentHours: 1,
       previousHours: 3,
     },
     {
-      activityType: "selfcare",
+      activityType: "SelfCare",
       currentHours: 0,
       previousHours: 1,
     },
   ],
   weekly: [
     {
-      activityType: "work",
+      activityType: "Work",
       currentHours: 32,
       previousHours: 36,
     },
     {
-      activityType: "play",
+      activityType: "Play",
       currentHours: 10,
       previousHours: 8,
     },
     {
-      activityType: "study",
+      activityType: "Study",
       currentHours: 4,
       previousHours: 7,
     },
     {
-      activityType: "exercise",
+      activityType: "Exercise",
       currentHours: 4,
       previousHours: 5,
     },
     {
-      activityType: "social",
+      activityType: "Social",
       currentHours: 5,
       previousHours: 10,
     },
     {
-      activityType: "selfcare",
+      activityType: "Selfcare",
       currentHours: 2,
       previousHours: 2,
     },
   ],
   monthly: [
     {
-      activityType: "work",
+      activityType: "Work",
       currentHours: 103,
       previousHours: 128,
     },
     {
-      activityType: "play",
+      activityType: "Play",
       currentHours: 23,
       previousHours: 29,
     },
     {
-      activityType: "study",
+      activityType: "Study",
       currentHours: 13,
       previousHours: 19,
     },
     {
-      activityType: "exercise",
+      activityType: "Exercise",
       currentHours: 11,
       previousHours: 18,
     },
     {
-      activityType: "social",
+      activityType: "Social",
       currentHours: 21,
       previousHours: 23,
     },
     {
-      activityType: "selfcare",
+      activityType: "SelfCare",
       currentHours: 7,
       previousHours: 11,
     },
