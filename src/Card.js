@@ -5,6 +5,7 @@ import { ReactComponent as StudyIcon } from "./images/icon-study.svg";
 import { ReactComponent as ExerciseIcon } from "./images/icon-exercise.svg";
 import { ReactComponent as SocialIcon } from "./images/icon-social.svg";
 import { ReactComponent as SelfCareIcon } from "./images/icon-self-care.svg";
+import { formatToCapitalCase } from "./utils";
 import "./Card.css";
 
 const icons = {
@@ -17,15 +18,6 @@ const icons = {
 };
 
 class Card extends React.Component {
-  formatToCapitalCase(word) {
-    // 1. take the first character of a word ("work" -> "w", "play" -> "p", "selfcare" -> "s")
-    let firstLetter = word.charAt(0);
-    // 2. make this character uppercase (example: "w" -> "W")
-    firstLetter = firstLetter.toUpperCase();
-    // 3. put your capitalized character as a first character of your word ("work" -> "Work")
-    // 4. return the capitalized word
-    return firstLetter + word.substr(1);
-  }
   render() {
     const activityTitle = this.props.activityTitle || "";
 
@@ -35,7 +27,7 @@ class Card extends React.Component {
         <div className="iconClass">{icons[activityTitle]}</div>
         <div className="card-body">
           <p className="activity-titles">
-            {this.formatToCapitalCase(activityTitle)}
+            {formatToCapitalCase(activityTitle)}
           </p>
           <p className="time">{this.props.time}hrs</p>
           <p className="previous-time">

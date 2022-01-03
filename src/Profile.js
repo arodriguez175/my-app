@@ -1,6 +1,7 @@
 import React from "react";
-import "./Profile.css";
+import { formatToCapitalCase } from "./utils.js";
 import profileImage from "./images/image-jeremy.png";
+import "./Profile.css";
 
 class Profile extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class Profile extends React.Component {
                   changeView(view);
                 }}
               >
-                {view}
+                {formatToCapitalCase(view)}
               </button>
             ))}
           </div>
