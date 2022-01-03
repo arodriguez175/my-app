@@ -5,96 +5,96 @@ import Profile from "./Profile";
 let timeSpentData = {
   daily: [
     {
-      activityType: "Work",
+      activityType: "work",
       currentHours: 5,
       previousHours: 7,
     },
     {
-      activityType: "Play",
+      activityType: "play",
       currentHours: 1,
       previousHours: 2,
     },
     {
-      activityType: "Study",
+      activityType: "study",
       currentHours: 0,
       previousHours: 1,
     },
     {
-      activityType: "Exercise",
+      activityType: "exercise",
       currentHours: 1,
       previousHours: 1,
     },
     {
-      activityType: "Social",
+      activityType: "social",
       currentHours: 1,
       previousHours: 3,
     },
     {
-      activityType: "SelfCare",
+      activityType: "selfcare",
       currentHours: 0,
       previousHours: 1,
     },
   ],
   weekly: [
     {
-      activityType: "Work",
+      activityType: "work",
       currentHours: 32,
       previousHours: 36,
     },
     {
-      activityType: "Play",
+      activityType: "play",
       currentHours: 10,
       previousHours: 8,
     },
     {
-      activityType: "Study",
+      activityType: "study",
       currentHours: 4,
       previousHours: 7,
     },
     {
-      activityType: "Exercise",
+      activityType: "exercise",
       currentHours: 4,
       previousHours: 5,
     },
     {
-      activityType: "Social",
+      activityType: "social",
       currentHours: 5,
       previousHours: 10,
     },
     {
-      activityType: "Selfcare",
+      activityType: "selfcare",
       currentHours: 2,
       previousHours: 2,
     },
   ],
   monthly: [
     {
-      activityType: "Work",
+      activityType: "work",
       currentHours: 103,
       previousHours: 128,
     },
     {
-      activityType: "Play",
+      activityType: "play",
       currentHours: 23,
       previousHours: 29,
     },
     {
-      activityType: "Study",
+      activityType: "study",
       currentHours: 13,
       previousHours: 19,
     },
     {
-      activityType: "Exercise",
+      activityType: "exercise",
       currentHours: 11,
       previousHours: 18,
     },
     {
-      activityType: "Social",
+      activityType: "social",
       currentHours: 21,
       previousHours: 23,
     },
     {
-      activityType: "SelfCare",
+      activityType: "selfcare",
       currentHours: 7,
       previousHours: 11,
     },
@@ -135,7 +135,10 @@ class App extends React.Component {
     return (
       <div class="grid-container">
         <div class="grid-item" id="profile-item">
-          <Profile changeViewHandler={this.changeView} currentView={this.state.currentView} />
+          <Profile
+            changeViewHandler={this.changeView}
+            currentView={this.state.currentView}
+          />
         </div>
 
         {timeSpentData[this.state.currentView].map((item) => {

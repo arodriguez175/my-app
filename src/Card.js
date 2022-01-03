@@ -17,15 +17,26 @@ const icons = {
 };
 
 class Card extends React.Component {
+  formatToCapitalCase(word) {
+    // 1. take the first character of a word ("work" -> "w", "play" -> "p", "selfcare" -> "s")
+    let firstLetter = word.charAt(0);
+    // 2. make this character uppercase (example: "w" -> "W")
+    firstLetter = firstLetter.toUpperCase();
+    // 3. put your capitalized character as a first character of your word ("work" -> "Work")
+    // 4. return the capitalized word
+    return firstLetter + word.substr(1);
+  }
   render() {
     const activityTitle = this.props.activityTitle || "";
 
     return (
-      <article className="background-card" id={activityTitle.toLowerCase()}>
+      <article className="background-card" id={activityTitle}>
         {/* get an icon for the activity */}
-        <div className="iconClass">{icons[activityTitle.toLowerCase()]}</div>
+        <div className="iconClass">{icons[activityTitle]}</div>
         <div className="card-body">
-          <p className="activity-titles">{activityTitle}</p>
+          <p className="activity-titles">
+            {this.formatToCapitalCase(activityTitle)}
+          </p>
           <p className="time">{this.props.time}hrs</p>
           <p className="previous-time">
             {this.props.previousTimeLabel} {this.props.previousTime}hrs
