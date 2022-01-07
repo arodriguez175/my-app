@@ -88,4 +88,11 @@
   .previous-time {
     display: inline;
   }
+
+  .previous-time {
+    position: relative;
+    top: -6px;
+    font-size: 13px;
+    padding-left: 5%;
+  }
 }
