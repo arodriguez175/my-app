@@ -90,9 +90,10 @@
   }
 
   .previous-time {
-    position: relative;
-    top: -6px;
     font-size: 13px;
-    padding-left: 5%;
+    float: right;
+    margin-right: 6%;
+    position: relative;
+    bottom: -15%;
   }
 }
