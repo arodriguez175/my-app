@@ -66,3 +66,20 @@ button.current {
 button:hover {
   cursor: pointer;
 }
+
+/* Mobile View */
+@media only screen and (max-width: 600px) {
+  button {
+    display: inline;
+    padding-bottom: 10px;
+  }
+
+  .top {
+    height: 200px;
+  }
+
+  .top p {
+    position: absolute;
+    top: 170px;
+  }
+}
