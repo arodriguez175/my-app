@@ -82,8 +82,16 @@ button:hover {
 
   .image-container {
     padding-bottom: 0;
-    padding-top: 15px;
+    padding-top: 7px;
     padding-left: 0;
+  }
+
+  .profile-card img {
+    width: 35%;
+  }
+
+  .profile-card p {
+    margin-top: 0;
   }
 
   .top p {
@@ -93,7 +101,7 @@ button:hover {
   .top .name {
     font-size: 25px;
     bottom: -30px;
-    padding-bottom: 0;
+    padding-bottom: 5px;
   }
 
   .card-body p {
