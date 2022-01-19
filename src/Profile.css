@@ -77,7 +77,13 @@ button:hover {
   }
 
   .top {
-    height: 200px;
+    text-align: center;
+  }
+
+  .image-container {
+    padding-bottom: 0;
+    padding-top: 15px;
+    padding-left: 0;
   }
 
   .top p {
