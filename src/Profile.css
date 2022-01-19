@@ -76,7 +76,7 @@ button:hover {
     padding-right: 7px;
   }
 
-  .top {
+  .profile-card {
     text-align: center;
   }
 
@@ -96,21 +96,20 @@ button:hover {
     padding-bottom: 0;
   }
 
+  .card-body p {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding-top: 6px;
+  }
+
   .time {
     font-size: 150%;
   }
 
   .previous-time {
     margin: 0;
-
     float: none;
     position: unset;
-  }
-
-  .card-body p {
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding-top: 6px;
   }
 }
