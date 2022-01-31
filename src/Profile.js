@@ -11,7 +11,7 @@ class Profile extends React.Component {
       <article className="profile-card">
         <div class="top">
           <div className="image-container">
-            <img src={profileImage} />
+            <img src={profileImage} alt="Selfie" />
           </div>
           <p class="report-for">Report for</p>
 

@@ -12,6 +12,7 @@ body {
 .grid-item {
   color: #fff;
   border-radius: 15px;
+  width: 270px;
 }
 
 #profile-item {
