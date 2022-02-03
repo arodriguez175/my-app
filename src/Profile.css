@@ -1,3 +1,4 @@
+/* Desktop View */
 .profile-card {
   background-color: hsl(235, 46%, 20%);
   border-radius: 15px;
@@ -68,57 +69,87 @@ button:hover {
   cursor: pointer;
 }
 
-/* Mobile View */
-@media only screen and (max-width: 630px) {
-  button {
-    display: inline-block;
-    padding-bottom: 10px;
-    padding-left: 11px;
-    padding-right: 7px;
-  }
-
+/* Tablet View */
+@media only screen and (max-width: 768px) {
   .profile-card {
-    text-align: center;
+    width: 153px;
   }
 
-  .image-container {
-    padding-bottom: 0;
-    padding-top: 7px;
-    padding-left: 0;
-  }
-
-  .profile-card img {
-    width: 35%;
+  .name {
+    padding-bottom: 58px;
+    font-size: 27px;
   }
 
   .profile-card p {
     margin-top: 0;
   }
 
-  .top p {
-    top: 170px;
+  .profile-card img {
+    /*width: 25%;
+    border: 5px solid #fff;
+    border-radius: 100%;*/
+    width: 30%;
+    border: 3px solid #fff;
+    border-radius: 100%;
+  }
+}
+
+/* Mobile Landscape View */
+@media only screen and (max-width: 630px) {
+  .profile-card {
+    width: 100%;
   }
 
-  .top .name {
-    font-size: 25px;
-    bottom: -30px;
-    padding-bottom: 5px;
+  .name {
+    padding: 15px;
   }
 
-  .card-body p {
-    display: block;
+  .profile-card p {
+    padding-top: 0;
+    margin-top: 0;
+    position: relative;
+    top: -15px;
+  }
+
+  .top {
+    height: 250px;
+    padding-bottom: 55px;
+  }
+
+  .profile-card {
     text-align: center;
-    margin: 0;
-    padding-top: 6px;
   }
 
-  .time {
-    font-size: 150%;
+  .profile-card-options button {
+    display: inline;
   }
 
-  .previous-time {
-    margin: 0;
-    float: none;
-    position: unset;
+  .image-container {
+    padding-left: 0;
+  }
+
+  .profile-card img {
+    width: 25%;
+    border: 5px solid #fff;
+    border-radius: 100%;
+  }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 425px) {
+  .profile-card {
+    text-align: center;
+  }
+
+  .profile-card-options button {
+    display: inline;
+  }
+
+  .image-container {
+    padding-left: 0;
+  }
+
+  .top {
+    padding-bottom: 5px;
   }
 }

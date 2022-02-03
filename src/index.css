@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
 body {
   background-color: hsl(226, 43%, 10%);
 }
 
+/* Desktop */
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -25,4 +28,67 @@ p {
   margin: 0;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+/* Tablet View */
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    padding: 20px;
+  }
+
+  .grid-item {
+    width: 153px;
+  }
+
+  .grid-item .card-body p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .grid-item .card-body {
+    height: 63%;
+  }
+
+  .grid-item .background-card {
+    height: 185px;
+  }
+
+  .grid-item .time {
+    font-size: 250%;
+  }
+
+  .grid-item .previous-time {
+    font-size: 10px;
+  }
+}
+
+/* Mobile Landscape View */
+@media only screen and (max-width: 630px) {
+  .grid-container {
+    padding: 0px;
+  }
+
+  .grid-item {
+    width: 100%;
+  }
+
+  .grid-item .card-body p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .grid-item .previous-time {
+    position: relative;
+    top: 3px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 425px) {
+  .grid-item .time {
+    font-size: 200%;
+  }
+
+  .grid-item .previous-time {
+    font-size: 15px;
+  }
+}
