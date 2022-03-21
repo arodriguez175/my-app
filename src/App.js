@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import Profile from "./Profile";
+import UserInput from "./UserInput";
 
 let timeSpentData = {
   daily: [
@@ -106,6 +107,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       currentView: "daily",
+      showModal: false,
     };
 
     this.changeView = this.changeView.bind(this);
@@ -116,6 +118,16 @@ class App extends React.Component {
       currentView: view,
     });
   }
+
+  showModal = (e) => {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  };
+
+  onClose = (e) => {
+    this.props.onClose && this.props.onClose(e);
+  };
 
   render() {
     let previousLabel;
@@ -132,27 +144,34 @@ class App extends React.Component {
       default:
         previousLabel = "Previous Hours - ";
     }
-    return (
-      <div class="grid-container">
-        <div class="grid-item" id="profile-item">
-          <Profile
-            changeViewHandler={this.changeView}
-            currentView={this.state.currentView}
-          />
-        </div>
 
-        {timeSpentData[this.state.currentView].map((item) => {
-          return (
-            <div class="grid-item">
-              <Card
-                activityTitle={item.activityType}
-                time={item.currentHours}
-                previousTime={item.previousHours}
-                previousTimeLabel={previousLabel}
-              />
-            </div>
-          );
-        })}
+    return (
+      <div>
+        <UserInput show={this.state.showModal} onClose={this.state.onClose} />
+        <div class="grid-container">
+          <div class="grid-item" id="profile-item">
+            <Profile
+              changeViewHandler={this.changeView}
+              currentView={this.state.currentView}
+            />
+          </div>
+
+          {timeSpentData[this.state.currentView].map((item) => {
+            return (
+              <div class="grid-item">
+                <Card
+                  activityTitle={item.activityType}
+                  time={item.currentHours}
+                  previousTime={item.previousHours}
+                  previousTimeLabel={previousLabel}
+                  onClick={(e) => {
+                    this.showModal();
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

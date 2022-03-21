@@ -29,7 +29,9 @@ class Card extends React.Component {
           <p className="activity-titles">
             {formatToCapitalCase(activityTitle)}
           </p>
-          <p className="time">{this.props.time}hrs</p>
+          <p className="time">
+            {this.props.time}hrs<button onClick={this.props.onClick}>+</button>
+          </p>
           <p className="previous-time">
             {this.props.previousTimeLabel} {this.props.previousTime}hrs
           </p>
