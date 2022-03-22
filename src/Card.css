@@ -97,3 +97,7 @@
     bottom: -15%;
   }
 }
+
+.modalButton {
+  display: unset;
+}

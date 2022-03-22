@@ -30,7 +30,10 @@ class Card extends React.Component {
             {formatToCapitalCase(activityTitle)}
           </p>
           <p className="time">
-            {this.props.time}hrs<button onClick={this.props.onClick}>+</button>
+            {this.props.time}hrs
+            <button className="modalButton" onClick={this.props.onClick}>
+              +
+            </button>
           </p>
           <p className="previous-time">
             {this.props.previousTimeLabel} {this.props.previousTime}hrs
