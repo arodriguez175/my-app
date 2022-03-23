@@ -108,6 +108,7 @@ class App extends React.Component {
     this.state = {
       currentView: "daily",
       showModal: false,
+      currentCategory: "",
     };
 
     this.changeView = this.changeView.bind(this);
@@ -119,9 +120,10 @@ class App extends React.Component {
     });
   }
 
-  showModal = (e) => {
+  showModal = (activityTitle) => {
     this.setState({
       showModal: !this.state.showModal,
+      currentCategory: activityTitle,
     });
   };
 
@@ -147,6 +149,7 @@ class App extends React.Component {
         <UserInput
           show={this.state.showModal}
           onClose={() => this.setState({ showModal: false })}
+          currentCategory={this.state.currentCategory}
         />
 
         <div class="grid-container">
@@ -165,8 +168,8 @@ class App extends React.Component {
                   time={item.currentHours}
                   previousTime={item.previousHours}
                   previousTimeLabel={previousLabel}
-                  onClick={(e) => {
-                    this.showModal();
+                  onClick={(activityTitle) => {
+                    this.showModal(activityTitle);
                   }}
                 />
               </div>

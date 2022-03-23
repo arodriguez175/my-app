@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserInput.css";
+import { formatToCapitalCase } from "./utils";
 
 class UserInput extends React.Component {
   onClose = (e) => {
@@ -14,9 +15,11 @@ class UserInput extends React.Component {
     return (
       <div className="modal">
         <div className="modalContent">
-          <p>Modal is here!</p>
+          <p>{formatToCapitalCase(this.props.currentCategory)}</p>
           <input></input>
-          <button className="enterButton">Enter</button>
+          <button className="enterButton" onClick={() => {}}>
+            Enter
+          </button>
           <button
             className="closeButton"
             onClick={(e) => {

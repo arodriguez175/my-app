@@ -31,7 +31,12 @@ class Card extends React.Component {
           </p>
           <p className="time">
             {this.props.time}hrs
-            <button className="modalButton" onClick={this.props.onClick}>
+            <button
+              className="modalButton"
+              onClick={() => {
+                this.props.onClick(activityTitle);
+              }}
+            >
               +
             </button>
           </p>
