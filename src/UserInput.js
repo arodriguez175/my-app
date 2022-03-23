@@ -3,7 +3,6 @@ import "./UserInput.css";
 
 class UserInput extends React.Component {
   onClose = (e) => {
-    //this.props.show = false;
     this.props.onClose && this.props.onClose(e);
   };
 

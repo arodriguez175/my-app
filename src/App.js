@@ -125,10 +125,6 @@ class App extends React.Component {
     });
   };
 
-  onClose = (e) => {
-    this.props.onClose && this.props.onClose(e);
-  };
-
   render() {
     let previousLabel;
     switch (this.state.currentView) {
@@ -147,7 +143,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <UserInput show={this.state.showModal} onClose={this.state.onClose} />
+        {/*<UserInput show={this.state.showModal} onClose={this.state.onClose} />*/}
+        <UserInput
+          show={this.state.showModal}
+          onClose={() => this.setState({ showModal: false })}
+        />
+
         <div class="grid-container">
           <div class="grid-item" id="profile-item">
             <Profile

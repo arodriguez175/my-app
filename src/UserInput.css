@@ -1,11 +1,11 @@
 .modal {
-  background-color: #e6e6e6;
   margin-left: 25%;
   margin-right: 25%;
   text-align: center;
   height: 260px;
   background-color: hsl(235, 46%, 20%);
   border-radius: 15px;
+  z-index: 1;
 }
 
 .closeButton {
