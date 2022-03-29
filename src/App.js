@@ -163,6 +163,7 @@ class App extends React.Component {
           {timeSpentData[this.state.currentView].map((item) => {
             return (
               <div class="grid-item">
+                {/* Card component with props for dynamic changes. */}
                 <Card
                   activityTitle={item.activityType}
                   time={item.currentHours}
