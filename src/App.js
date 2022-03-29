@@ -108,6 +108,7 @@ class App extends React.Component {
     this.state = {
       currentView: "daily",
       showModal: false,
+      // Current category of modal.
       currentCategory: "",
     };
 
