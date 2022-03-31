@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Profile from "./Profile";
 import UserInput from "./UserInput";
+import { activityStats } from "./store";
 
 let timeSpentData = {
   daily: [
@@ -161,7 +162,8 @@ class App extends React.Component {
             />
           </div>
 
-          {timeSpentData[this.state.currentView].map((item) => {
+          {/* Replaced timeSpentData with activityStats */}
+          {activityStats[this.state.currentView].map((item) => {
             return (
               <div class="grid-item">
                 {/* Card component with props for dynamic changes. */}
