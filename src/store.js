@@ -1,14 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const store = configureStore({
-  reducer: {},
-
+const preloadedState = {
   activityRecords: [
-    {
+    /*{
       activityType: {item.activityType}, // Get currentCategory
       hours: 0, // number less than 24,
       timestamp: toDateTimeString(), // toDateTimeString(),
-    },
+    },*/
   ],
 
   // Same from timeSpentData object.
@@ -110,6 +108,10 @@ const store = configureStore({
       },
     ],
   },
+};
+
+const store = configureStore({
+  reducer: {},
 });
 
 export default store;
