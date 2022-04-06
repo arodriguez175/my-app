@@ -112,6 +112,7 @@ const preloadedState = {
 
 const store = configureStore({
   reducer: {},
+  preloadedState,
 });
 
 export default store;
