@@ -1,9 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import Card from "./Card";
 import Profile from "./Profile";
 import UserInput from "./UserInput";
 // import { activityStats } from "./store";
-import { connect } from "react-redux";
 
 let timeSpentData = {
   daily: [
@@ -187,9 +187,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  mystate: state,
-  activityRecords: state.activityRecords,
-});
-
+function mapStateToProps(state) {
+  return {
+    activityStats: state.activity.activityStats,
+  };
+}
 export default connect(mapStateToProps)(App);

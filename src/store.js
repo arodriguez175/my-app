@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
+import activityReducer from "./activitySlice";
 
-const preloadedState = {
+const preloadedData = {
   activityRecords: [
     /*{
       activityType: {item.activityType}, // Get currentCategory
@@ -110,9 +111,15 @@ const preloadedState = {
   },
 };
 
+console.log("preloadedData", preloadedData);
+
 const store = configureStore({
-  reducer: {},
-  preloadedState,
+  reducer: {
+    activity: activityReducer,
+  },
+  preloadedState: {
+    activity: preloadedData,
+  },
 });
 
 export default store;
