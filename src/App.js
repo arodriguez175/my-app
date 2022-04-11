@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import Card from "./Card";
 import Profile from "./Profile";
 import UserInput from "./UserInput";
-import { activityStats } from "./store";
+// import { activityStats } from "./store";
 
 let timeSpentData = {
   daily: [
@@ -163,7 +164,7 @@ class App extends React.Component {
           </div>
 
           {/* Replaced timeSpentData with activityStats */}
-          {activityStats[this.state.currentView].map((item) => {
+          {timeSpentData[this.state.currentView].map((item) => {
             return (
               <div class="grid-item">
                 {/* Card component with props for dynamic changes. */}
@@ -185,4 +186,9 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    activityStats: state.activity.activityStats,
+  }
+}
+export default connect(mapStateToProps)(App);
