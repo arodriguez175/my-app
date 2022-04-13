@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { activityStats } from "./mocks";
 
 /* A "slice" is a collection of Redux reducer logic and actions
   for a single feature in the app */
@@ -13,10 +14,12 @@ export const activitySlice = createSlice({
   /* A reducer takes the state and action of the application 
   and returns the new state. */
   reducers: {
+    populateWithMockData: (state, action) => {
+      state.activityStats = activityStats;
+    },
   },
 });
 
-
-// export const {  } = activitySlice.actions;
+export const { populateWithMockData } = activitySlice.actions;
 
 export default activitySlice.reducer;

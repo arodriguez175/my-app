@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Card from "./Card";
 import Profile from "./Profile";
 import UserInput from "./UserInput";
+import { populateWithMockData } from "./activitySlice";
 
 class App extends React.Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class App extends React.Component {
           </div>
 
           {/* Replaced timeSpentData with activityStats */}
-          {this.props.activityStats[this.state.currentView].map((item) => {
+          {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div class="grid-item">
                 {/* Card component with props for dynamic changes. */}
@@ -80,7 +81,14 @@ class App extends React.Component {
                 />
               </div>
             );
-          })}
+          }) || (
+            <React.Fragment>
+              <p>No activity yet!</p>
+              <button onClick={this.props.populateWithMockData}>
+                Add some mock data
+              </button>
+            </React.Fragment>
+          )}
         </div>
       </div>
     );
@@ -92,4 +100,10 @@ function mapStateToProps(state) {
     activityStats: state.activity.activityStats,
   };
 }
-export default connect(mapStateToProps)(App);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    populateWithMockData: () => dispatch(populateWithMockData()),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
