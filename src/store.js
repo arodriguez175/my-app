@@ -4,14 +4,7 @@ import { saveState, loadState } from "./localStorage";
 import throttle from "lodash.throttle";
 
 const preloadedData = {
-  activityRecords: [
-    /*{
-      activityType: {item.activityType}, // Get currentCategory
-      hours: 0, // number less than 24,
-      timestamp: toDateTimeString(), // toDateTimeString(),
-    },*/
-  ],
-
+  activityRecords: [],
   // Same from timeSpentData object.
 };
 
