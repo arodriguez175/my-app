@@ -28,7 +28,7 @@ export const activitySlice = createSlice({
       state.activityStats = activityStats;
     },
     newLoadedData: (state, action) => {
-      state.activityRecords = activityRecords;
+      state.activityRecords = newLoadedData;
     },
   },
 });
