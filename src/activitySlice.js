@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { activityStats } from "./mocks";
 
+const date = new Date();
+
 const newLoadedData = {
   activityRecords: [
-    /*{
-      activityType: {item.activityType}, // Get currentCategory
+    {
+      activityType: activityStats.activityType, // Get currentCategory
       hours: 0, // number less than 24,
-      timestamp: toDateTimeString(), // toDateTimeString(),
-    },*/
+      timestamp: date.toTimeString(), // toDateTimeString(),
+    },
   ],
 };
 
