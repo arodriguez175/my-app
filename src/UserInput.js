@@ -22,10 +22,6 @@ function UserInput(props) {
 
   return (
     <div className="modal">
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
       <div className="modalContent">
         <p>{formatToCapitalCase(props.currentCategory)}</p>
         <input
@@ -33,6 +29,10 @@ function UserInput(props) {
           value={hours}
           onChange={(event) => setHours(event.target.value)}
         ></input>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
         <button
           className="enterButton"
           onClick={() => {
