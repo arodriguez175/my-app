@@ -1,46 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./UserInput.css";
 import { formatToCapitalCase } from "./utils";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { saveActivityRecord } from "./activitySlice";
 
-class UserInput extends React.Component {
-  onClose = (e) => {
-    this.props.onClose && this.props.onClose(e);
+function UserInput(props) {
+  const [startDate, setStartDate] = useState(new Date());
+  const [hours, setHours] = useState(0);
+  const dispatch = useDispatch();
+
+  const onClose = (e) => {
+    props.onClose && props.onClose(e);
   };
 
-  render() {
-    if (!this.props.show) {
-      return null;
-    }
-
-    const [startDate, setStartDate] = this.setState(new Date());
-
-    return (
-      <div className="modal">
-        <DatePicker
-          selected={startDate}
-          onChange={(date: Date) => setStartDate(date)}
-        />
-        <div className="modalContent">
-          <p>{formatToCapitalCase(this.props.currentCategory)}</p>
-          <input></input>
-          <button className="enterButton" onClick={() => {}}>
-            Enter
-          </button>
-          <button
-            className="closeButton"
-            onClick={(e) => {
-              this.props.onClose(e);
-            }}
-          >
-            x
-          </button>
-        </div>
-      </div>
-    );
+  if (!props.show) {
+    return null;
   }
+
+  return (
+    <div className="modal">
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+      />
+      <div className="modalContent">
+        <p>{formatToCapitalCase(props.currentCategory)}</p>
+        <input
+          type="number"
+          value={hours}
+          onChange={(event) => setHours(event.target.value)}
+        ></input>
+        <button
+          className="enterButton"
+          onClick={() => {
+            const actionPayload = {
+              activityType: props.currentCategory,
+              timestamp: startDate.toISOString(),
+              hours: hours,
+            };
+            dispatch(saveActivityRecord(actionPayload));
+          }}
+        >
+          Enter
+        </button>
+        <button
+          className="closeButton"
+          onClick={(e) => {
+            props.onClose(e);
+          }}
+        >
+          x
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default UserInput;

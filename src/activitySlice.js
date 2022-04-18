@@ -32,9 +32,28 @@ export const activitySlice = createSlice({
     newLoadedData: (state, action) => {
       state.activityRecords = newLoadedData;
     },
+    saveActivityRecord: (state, action) => {
+      // action variable will contain payload
+      // inside payload, we'll have the following 3 variables:
+      // activityType, timestamp, hours.
+
+      /* What needs to be done:
+      1. put activityType, timestamp, hours into one object like so:
+      const newActivityRecord = { activityType, timestamp, hours }
+      2. "push" the newActivityRecord object into state.activityRecords and save it
+      */
+      const { activityType, timestamp, hours } = action.payload;
+      const newActivityRecord = {
+        activityType,
+        timestamp,
+        hours,
+      };
+      state.activityRecords.push(newActivityRecord);
+    },
   },
 });
 
-export const { populateWithMockData } = activitySlice.actions;
+export const { populateWithMockData, saveActivityRecord } =
+  activitySlice.actions;
 
 export default activitySlice.reducer;

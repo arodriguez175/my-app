@@ -7,3 +7,14 @@ export function formatToCapitalCase(word) {
   // 4. returns the capitalized word
   return firstLetter + word.substr(1);
 }
+
+export function calculateForDailyView(activityRecords) {
+  /* 
+  1. find out what is the date today
+  // code for today's current date
+  2. take activityRecords, and find the ones where "timestamp" contains today's date
+  3. for records from today, sum up "hours". This will be our total for today
+  */
+
+  return 0; // TODO: replace with calculated total number of hours for today
+}
