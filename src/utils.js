@@ -15,19 +15,24 @@ export function calculateForDailyView(activityRecords) {
   3. for records from today, sum up "hours". This will be our total for today
   */
 
-  // Get todays date
-  const date = new Date();
-  const [month, day, year] = [
-    date.getMonth(),
-    date.getDate(),
-    date.getFullYear(),
-  ];
+  // Get the start and end of today's date
+  const startDate = new Date(); // April 27, 2022 8:09 PM
+  const endDate = new Date();
+  startDate.setHours(0, 0, 0, 0);
+  endDate.setHours(23, 59, 59, 999);
 
-  // date from timestamp
-  date.toTimeString();
-  let filtered = [activityRecords].filter();
+  const filteredActivityRecords = activityRecords.filter((activityRecord) => {
+    // activityRecord.timestamp is a string, we transform it into a Date object
+    const activityDate = new Date(activityRecord.timestamp);
 
+    // check whether the timestamp of activityRecord is sometime within today's date
+    return activityDate > startDate && activityDate < endDate;
+  });
+  // debugger;
   // Total hours entered for today
-
-  return 0; // TODO: replace with calculated total number of hours for today
+  let totalHours = 0;
+  for (const record of filteredActivityRecords) {
+    totalHours = record.hours + totalHours;
+  }
+  return totalHours; // TODO: replace with calculated total number of hours for today
 }

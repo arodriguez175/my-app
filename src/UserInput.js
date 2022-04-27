@@ -39,7 +39,7 @@ function UserInput(props) {
             const actionPayload = {
               activityType: props.currentCategory,
               timestamp: startDate.toISOString(),
-              hours: hours,
+              hours: parseInt(hours) || 0,
             };
             dispatch(saveActivityRecord(actionPayload));
           }}
