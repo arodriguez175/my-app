@@ -28,6 +28,18 @@ p {
   margin: 0;
 }
 
+.demo-data {
+  color: #fff;
+  margin: auto;
+  margin-top: 50%;
+}
+
+.demo-data button {
+  color: #fff;
+  background-color: hsl(246, 80%, 60%);
+  padding: 15px;
+}
+
 /* Tablet View */
 @media only screen and (max-width: 768px) {
   .grid-container {

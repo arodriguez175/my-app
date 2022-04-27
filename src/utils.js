@@ -25,6 +25,7 @@ export function calculateForDailyView(activityRecords) {
 
   // date from timestamp
   date.toTimeString();
+  let filtered = [activityRecords].filter();
 
   // Total hours entered for today
 

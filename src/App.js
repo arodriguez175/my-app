@@ -83,10 +83,12 @@ class App extends React.Component {
             );
           }) || (
             <React.Fragment>
-              <p>No activity yet!</p>
-              <button onClick={this.props.populateWithMockData}>
-                Add some mock data
-              </button>
+              <div className="demo-data">
+                <p>No activity yet!</p>
+                <button onClick={this.props.populateWithMockData}>
+                  Add some mock data
+                </button>
+              </div>
             </React.Fragment>
           )}
         </div>
