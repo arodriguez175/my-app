@@ -7,6 +7,8 @@ import { populateWithMockData } from "./activitySlice";
 import {
   calculateForDailyView,
   calculateActivityStatsByCategory,
+  calculateForWeeklyView,
+  calculateWeeklyActivityStatsByCategory,
 } from "./utils.js";
 import { activityCategories } from "./constants.js";
 
@@ -107,9 +109,16 @@ function mapStateToProps(state) {
     state.activity.activityRecords,
     activityCategories
   );
+
+  const weeklyActivityStats = calculateWeeklyActivityStatsByCategory(
+    state.activity.activityRecords,
+    activityCategories
+  );
+
   return {
-    activityStats: { daily: dailyActivityStats },
+    activityStats: { daily: dailyActivityStats, weekly: weeklyActivityStats },
     dailyActivityStats,
+    weeklyActivityStats,
   };
 }
 

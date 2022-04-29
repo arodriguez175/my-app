@@ -86,7 +86,7 @@ export function calculateActivityStatsByCategory(
 }
 
 /* Weekly */
-function calculateForWeeklyView(activityRecords, date) {
+export function calculateForWeeklyView(activityRecords, date) {
   // Get the start and end of this week's date
   const startDate = new Date(date.getTime()); // creating a clone of the supplied date
   const endDate = new Date(date.getTime());
@@ -108,4 +108,35 @@ function calculateForWeeklyView(activityRecords, date) {
     totalHours = record.hours + totalHours;
   }
   return totalHours; // TODO: replace with calculated total number of hours for today
+}
+
+// Sort Weekly data by category and calculate previous hours
+export function calculateWeeklyActivityStatsByCategory(
+  activityRecords,
+  activityCategories
+) {
+  // Holds my activity card hours separated by category
+  const hoursByCategory = []; // { "work": [...], "play": [...], "social": []}
+
+  // For each category, run calculateForWeeklyView function
+  for (const category of activityCategories) {
+    // cycle 1: category = 'work'
+    const activities = activityRecords.filter(
+      (record) => record.activityType === category
+    );
+    const today = new Date();
+    const tempDate = new Date();
+    tempDate.setDate(tempDate.getDate() - 7);
+    const lastWeek = new Date(tempDate.toDateString());
+
+    const thisWeekHours = calculateForWeeklyView(activities, today);
+    const previousWeekHours = calculateForDailyView(activities, lastWeek);
+    hoursByCategory.push({
+      activityType: category,
+      currentHours: thisWeekHours,
+      previousWeekHours,
+    });
+  }
+
+  return hoursByCategory;
 }
