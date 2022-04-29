@@ -4,7 +4,11 @@ import Card from "./Card";
 import Profile from "./Profile";
 import UserInput from "./UserInput";
 import { populateWithMockData } from "./activitySlice";
-import { calculateForDailyView } from "./utils.js";
+import {
+  calculateForDailyView,
+  calculateActivityStatsByCategory,
+} from "./utils.js";
+import { activityCategories } from "./constants.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -99,11 +103,13 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  const dailyData = calculateForDailyView(state.activity.activityRecords);
-
+  const dailyActivityStats = calculateActivityStatsByCategory(
+    state.activity.activityRecords,
+    activityCategories
+  );
   return {
-    activityStats: state.activity.activityStats,
-    dailyData,
+    activityStats: { daily: dailyActivityStats },
+    dailyActivityStats,
   };
 }
 
