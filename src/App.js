@@ -9,6 +9,7 @@ import {
   calculateActivityStatsByCategory,
   calculateForWeeklyView,
   calculateWeeklyActivityStatsByCategory,
+  calculateMonthlyActivityStatsByCategory,
 } from "./utils.js";
 import { activityCategories } from "./constants.js";
 
@@ -115,10 +116,17 @@ function mapStateToProps(state) {
     activityCategories
   );
 
+  const monthlyActivityStats = calculateMonthlyActivityStatsByCategory(
+    state.activity.activityRecords,
+    activityCategories
+  );
+
   return {
-    activityStats: { daily: dailyActivityStats, weekly: weeklyActivityStats },
-    dailyActivityStats,
-    weeklyActivityStats,
+    activityStats: {
+      daily: dailyActivityStats,
+      weekly: weeklyActivityStats,
+      monthly: monthlyActivityStats,
+    },
   };
 }
 

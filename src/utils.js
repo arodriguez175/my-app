@@ -133,11 +133,72 @@ export function calculateWeeklyActivityStatsByCategory(
     const lastWeek = new Date(tempDate.toDateString());
 
     const thisWeekHours = calculateForWeeklyView(activities, today);
-    const previousWeekHours = calculateForDailyView(activities, lastWeek);
+    const previousWeekHours = calculateForWeeklyView(activities, lastWeek);
     hoursByCategory.push({
       activityType: category,
       currentHours: thisWeekHours,
       previousHours: previousWeekHours,
+    });
+  }
+
+  return hoursByCategory;
+}
+
+/* Monthly */
+export function calculateForMonthlyView(activityRecords, date) {
+  // Get the first and last day of the current week
+  const first = 1;
+  // const last = new
+
+  const firstDay = new Date(date.setDate(first));
+  const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  console.log("firstDay", firstDay);
+  console.log("lastDay", lastDay);
+
+  firstDay.setHours(0, 0, 0, 0);
+  lastDay.setHours(23, 59, 59, 999); // End of week
+
+  const filteredActivityRecords = activityRecords.filter((activityRecord) => {
+    // activityRecord.timestamp is a string, we transform it into a Date object
+    const activityDate = new Date(activityRecord.timestamp);
+
+    // check whether the timestamp of activityRecord is sometime within today's date
+    return activityDate > firstDay && activityDate < lastDay;
+  });
+
+  // Total hours entered for this week
+  let totalHours = 0;
+  for (const record of filteredActivityRecords) {
+    totalHours = record.hours + totalHours;
+  }
+  return totalHours;
+}
+
+// Sort Monthly data by category and calculate previous hours
+export function calculateMonthlyActivityStatsByCategory(
+  activityRecords,
+  activityCategories
+) {
+  // Holds my activity card hours separated by category
+  const hoursByCategory = []; // { "work": [...], "play": [...], "social": []}
+
+  // For each category, run calculateForWeeklyView function
+  for (const category of activityCategories) {
+    // cycle 1: category = 'work'
+    const activities = activityRecords.filter(
+      (record) => record.activityType === category
+    );
+    const today = new Date();
+    const tempDate = new Date();
+    tempDate.setMonth(tempDate.getMonth() - 1);
+    const lastMonth = new Date(tempDate.toDateString());
+
+    const thisMonthHours = calculateForMonthlyView(activities, today);
+    const previousMonthHours = calculateForMonthlyView(activities, lastMonth);
+    hoursByCategory.push({
+      activityType: category,
+      currentHours: thisMonthHours,
+      previousHours: previousMonthHours,
     });
   }
 
