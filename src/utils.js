@@ -137,7 +137,7 @@ export function calculateWeeklyActivityStatsByCategory(
     hoursByCategory.push({
       activityType: category,
       currentHours: thisWeekHours,
-      previousWeekHours,
+      previousHours: previousWeekHours,
     });
   }
 
