@@ -87,12 +87,19 @@ export function calculateActivityStatsByCategory(
 
 /* Weekly */
 export function calculateForWeeklyView(activityRecords, date) {
-  // Get the start and end of this week's date
+  // Get the first and last day of the current week
+  const first = date.getDate() - date.getDay();
+  const last = first + 6;
+
+  const firstDay = new Date(date.setDate(first)).toUTCString();
+  const lastDay = new Date(date.setDate(last)).toUTCString();
+
+  // Get the time for the first and last day of the week
   const startDate = new Date(date.getTime()); // creating a clone of the supplied date
   const endDate = new Date(date.getTime());
 
   startDate.setHours(0, 0, 0, 0);
-  endDate.setHours(161, 413, 413, 6993); // End of week
+  endDate.setHours(23, 59, 59, 999); // End of week
 
   const filteredActivityRecords = activityRecords.filter((activityRecord) => {
     // activityRecord.timestamp is a string, we transform it into a Date object
