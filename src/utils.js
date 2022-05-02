@@ -152,8 +152,6 @@ export function calculateForMonthlyView(activityRecords, date) {
 
   const firstDay = new Date(date.setDate(first));
   const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-  console.log("firstDay", firstDay);
-  console.log("lastDay", lastDay);
 
   firstDay.setHours(0, 0, 0, 0);
   lastDay.setHours(23, 59, 59, 999); // End of week

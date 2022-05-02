@@ -9,22 +9,23 @@ class Profile extends React.Component {
     let views = ["daily", "weekly", "monthly"];
     return (
       <article className="profile-card">
-        <div class="top">
+        <div className="top">
           <div className="image-container">
             <img src={profileImage} alt="Selfie" />
           </div>
-          <p class="report-for">Report for</p>
+          <p className="report-for">Report for</p>
 
-          <p class="name">
+          <p className="name">
             Jeremy <br />
             Robson
           </p>
         </div>
 
         <div>
-          <div class="profile-card-options">
+          <div className="profile-card-options">
             {views.map((view) => (
               <button
+                key={view}
                 className={view === this.props.currentView ? "current" : ""}
                 onClick={() => {
                   changeView(view);

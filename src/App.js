@@ -5,9 +5,7 @@ import Profile from "./Profile";
 import UserInput from "./UserInput";
 import { populateWithMockData } from "./activitySlice";
 import {
-  calculateForDailyView,
   calculateActivityStatsByCategory,
-  calculateForWeeklyView,
   calculateWeeklyActivityStatsByCategory,
   calculateMonthlyActivityStatsByCategory,
 } from "./utils.js";
@@ -40,7 +38,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     let previousLabel;
     switch (this.state.currentView) {
       case "daily":
@@ -65,8 +62,8 @@ class App extends React.Component {
           currentCategory={this.state.currentCategory}
         />
 
-        <div class="grid-container">
-          <div class="grid-item" id="profile-item">
+        <div className="grid-container">
+          <div className="grid-item" id="profile-item">
             <Profile
               changeViewHandler={this.changeView}
               currentView={this.state.currentView}
@@ -76,7 +73,7 @@ class App extends React.Component {
           {/* Replaced timeSpentData with activityStats */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
-              <div class="grid-item">
+              <div className="grid-item" key={item.activityType}>
                 {/* Card component with props for dynamic changes. */}
                 <Card
                   activityTitle={item.activityType}

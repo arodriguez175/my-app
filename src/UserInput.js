@@ -46,12 +46,7 @@ function UserInput(props) {
         >
           Enter
         </button>
-        <button
-          className="closeButton"
-          onClick={(e) => {
-            props.onClose(e);
-          }}
-        >
+        <button className="closeButton" onClick={onClose}>
           x
         </button>
       </div>

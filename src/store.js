@@ -3,11 +3,6 @@ import activityReducer from "./activitySlice";
 import { saveState, loadState } from "./localStorage";
 import throttle from "lodash.throttle";
 
-const preloadedData = {
-  activityRecords: [],
-  // Same from timeSpentData object.
-};
-
 const persistedState = loadState();
 
 const store = configureStore({
