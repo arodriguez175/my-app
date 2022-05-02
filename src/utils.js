@@ -91,22 +91,18 @@ export function calculateForWeeklyView(activityRecords, date) {
   const first = date.getDate() - date.getDay();
   const last = first + 6;
 
-  const firstDay = new Date(date.setDate(first)).toUTCString();
-  const lastDay = new Date(date.setDate(last)).toUTCString();
+  const firstDay = new Date(date.setDate(first));
+  const lastDay = new Date(date.setDate(last));
 
-  // Get the time for the first and last day of the week
-  const startDate = new Date(date.getTime()); // creating a clone of the supplied date
-  const endDate = new Date(date.getTime());
-
-  startDate.setHours(0, 0, 0, 0);
-  endDate.setHours(23, 59, 59, 999); // End of week
+  firstDay.setHours(0, 0, 0, 0);
+  lastDay.setHours(23, 59, 59, 999); // End of week
 
   const filteredActivityRecords = activityRecords.filter((activityRecord) => {
     // activityRecord.timestamp is a string, we transform it into a Date object
     const activityDate = new Date(activityRecord.timestamp);
 
     // check whether the timestamp of activityRecord is sometime within today's date
-    return activityDate > startDate && activityDate < endDate;
+    return activityDate > firstDay && activityDate < lastDay;
   });
 
   // Total hours entered for this week
@@ -114,7 +110,7 @@ export function calculateForWeeklyView(activityRecords, date) {
   for (const record of filteredActivityRecords) {
     totalHours = record.hours + totalHours;
   }
-  return totalHours; // TODO: replace with calculated total number of hours for today
+  return totalHours;
 }
 
 // Sort Weekly data by category and calculate previous hours
