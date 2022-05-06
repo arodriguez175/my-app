@@ -87,9 +87,9 @@ export function calculateActivityStatsByCategory(
 
 /* Weekly */
 export function calculateForWeeklyView(activityRecords, date) {
-  // Get the first and last day of the current week
+  // // First day is the day of the month - the day of the week
   const first = date.getDate() - date.getDay();
-  const last = first + 6;
+  const last = first + 6; // last day is the first day + 6
 
   const firstDay = new Date(date.setDate(first));
   const lastDay = new Date(date.setDate(last));

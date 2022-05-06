@@ -1,3 +1,4 @@
+/* Desktop View */
 .background-card {
   border-radius: 15px;
   height: 235px;
@@ -43,6 +44,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   margin-left: 25px;
+  margin-right: 25px;
 }
 
 .activity-titles {
@@ -100,4 +102,20 @@
 
 .modalButton {
   display: unset;
+  background-color: hsl(246, 80%, 60%);
+  color: #fff;
+  margin-top: 0;
+  margin-left: 28px;
+  margin-right: 0;
+  padding: 10px;
+  position: relative;
+  top: -8px;
+}
+
+/* Tablet View */
+@media only screen and (max-width: 768px) {
+  .modalButton {
+    margin-left: unset;
+    width: 100%;
+  }
 }

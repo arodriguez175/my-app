@@ -37,7 +37,7 @@ class Card extends React.Component {
                 this.props.onClick(activityTitle);
               }}
             >
-              +
+              Enter Time
             </button>
           </p>
           <p className="previous-time">

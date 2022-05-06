@@ -55,14 +55,6 @@ p {
     padding-bottom: 5px;
   }
 
-  .grid-item .card-body {
-    height: 63%;
-  }
-
-  .grid-item .background-card {
-    height: 185px;
-  }
-
   .grid-item .time {
     font-size: 250%;
   }
