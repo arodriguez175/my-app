@@ -66,7 +66,26 @@
   margin-right: 15px;
 }
 
-/* Mobile View */
+.modalButton {
+  display: unset;
+  background-color: hsl(246, 80%, 60%);
+  color: #fff;
+  margin-top: 0;
+  margin-left: 17px;
+  padding: 10px;
+  position: relative;
+  top: -8px;
+}
+
+/* Tablet View */
+@media only screen and (max-width: 768px) {
+  .modalButton {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Mobile Landscape View */
 @media only screen and (max-width: 630px) {
   .grid-container {
     grid-template-columns: auto;
@@ -98,24 +117,27 @@
     position: relative;
     bottom: -15%;
   }
-}
 
-.modalButton {
-  display: unset;
-  background-color: hsl(246, 80%, 60%);
-  color: #fff;
-  margin-top: 0;
-  margin-left: 28px;
-  margin-right: 0;
-  padding: 10px;
-  position: relative;
-  top: -8px;
-}
-
-/* Tablet View */
-@media only screen and (max-width: 768px) {
   .modalButton {
-    margin-left: unset;
-    width: 100%;
+    width: unset;
+    margin-left: 7px;
   }
+}
+
+/* Mobile L View */
+@media only screen and (max-width: 425px) {
+}
+
+@media only screen and (max-width: 375px) {
+  .grid-item .card-body p {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .previous-time {
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 320px) {
 }
