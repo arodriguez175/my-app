@@ -124,10 +124,6 @@
   }
 }
 
-/* Mobile L View */
-@media only screen and (max-width: 425px) {
-}
-
 @media only screen and (max-width: 375px) {
   .grid-item .card-body p {
     padding-top: 0;
@@ -137,7 +133,4 @@
   .previous-time {
     float: left;
   }
-}
-
-@media only screen and (max-width: 320px) {
 }

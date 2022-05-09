@@ -21,34 +21,36 @@ function UserInput(props) {
   }
 
   return (
-    <div className="modal">
-      <div className="modalContent">
-        <p>{formatToCapitalCase(props.currentCategory)}</p>
-        <input
-          type="number"
-          value={hours}
-          onChange={(event) => setHours(event.target.value)}
-        ></input>
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
-        <button
-          className="enterButton"
-          onClick={() => {
-            const actionPayload = {
-              activityType: props.currentCategory,
-              timestamp: startDate.toISOString(),
-              hours: parseInt(hours) || 0,
-            };
-            dispatch(saveActivityRecord(actionPayload));
-          }}
-        >
-          Enter
-        </button>
+    <div className="modalBackground">
+      <div className="modal">
         <button className="closeButton" onClick={onClose}>
           x
         </button>
+        <div className="modalBody">
+          <p>{formatToCapitalCase(props.currentCategory)}</p>
+          <input
+            type="number"
+            value={hours}
+            onChange={(event) => setHours(event.target.value)}
+          ></input>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
+          <button
+            className="enterButton"
+            onClick={() => {
+              const actionPayload = {
+                activityType: props.currentCategory,
+                timestamp: startDate.toISOString(),
+                hours: parseInt(hours) || 0,
+              };
+              dispatch(saveActivityRecord(actionPayload));
+            }}
+          >
+            Enter
+          </button>
+        </div>
       </div>
     </div>
   );
