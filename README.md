@@ -6,11 +6,11 @@ This is a dash board app that shows the user the amount of hours and previous ho
 
 ## What this Application Does
 
-This app displays the amount of pre given hours and previous hours that was saved and displays it to the user in different sections of the app after clicking on one of the options of daily, weekly, or monthly.
+This app displays the amount of hours and previous hours that were saved and displays it to the user in different sections of the app after clicking on one of the options of daily, weekly, or monthly.
 
 ## Technologies Used
 
-The project was built from scratch using HTML, CSS, and using the React.js library with [Create React App](https://github.com/facebook/create-react-app).
+The project was built from scratch using HTML, CSS, the React.js library with [Create React App](https://github.com/facebook/create-react-app), and Redux.
 
 ## How to Run It
 
@@ -30,13 +30,5 @@ You will also see any lint errors in the console.
 
 ## Features I Hope to Implement in the Future
 
-- The ability to actually track time for the user instead of showing the time that is already saved in the app
 - Track minutes and seconds
-- More breakpoints other than desktop view and mobile view
-- Adding a break point between desktop screen size and mobile screen size
-- The ability for the user to be able to upload their photo to replace the default one
-- The ability for the user to add their name to the dashboard to replace the default one
-
-## Credits
-
-I give credit to Anna Kurylo who helped me with this project.
+- Possibly a built in timer
