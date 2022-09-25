@@ -10,6 +10,8 @@ import {
   calculateMonthlyActivityStatsByCategory,
 } from "./utils.js";
 import { activityCategories } from "./constants.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,6 +56,15 @@ class App extends React.Component {
 
     return (
       <div>
+        <a
+          className="github"
+          href="https://github.com/arodriguez175/Time-Tracking-Dashboard-App"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+
         <UserInput
           show={this.state.showModal}
           onClose={() => this.setState({ showModal: false })}
