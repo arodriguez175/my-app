@@ -17,7 +17,6 @@ class App extends React.Component {
     this.state = {
       currentView: "daily",
       showModal: false,
-      // Current category of modal.
       currentCategory: "",
     };
 
@@ -55,7 +54,6 @@ class App extends React.Component {
 
     return (
       <div>
-        {/*<UserInput show={this.state.showModal} onClose={this.state.onClose} />*/}
         <UserInput
           show={this.state.showModal}
           onClose={() => this.setState({ showModal: false })}
@@ -70,11 +68,9 @@ class App extends React.Component {
             />
           </div>
 
-          {/* Replaced timeSpentData with activityStats */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div className="grid-item" key={item.activityType}>
-                {/* Card component with props for dynamic changes. */}
                 <Card
                   activityTitle={item.activityType}
                   time={item.currentHours}

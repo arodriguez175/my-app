@@ -23,7 +23,6 @@ class Card extends React.Component {
 
     return (
       <article className="background-card" id={activityTitle}>
-        {/* get an icon for the activity */}
         <div className="iconClass">{icons[activityTitle]}</div>
         <div className="card-body">
           <p className="activity-titles">
