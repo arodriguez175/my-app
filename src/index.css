@@ -9,6 +9,7 @@ body {
   color: #fff;
 }
 
+/* Desktop */
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -44,6 +45,7 @@ p {
   padding: 15px;
 }
 
+/* Tablet View */
 @media only screen and (max-width: 768px) {
   .grid-container {
     padding: 20px;
@@ -67,6 +69,7 @@ p {
   }
 }
 
+/* Mobile Landscape View */
 @media only screen and (max-width: 630px) {
   .grid-container {
     padding: 0px;
@@ -83,11 +86,13 @@ p {
 
   .grid-item .previous-time {
     position: relative;
+    /* top: 3px; */
     top: -40px;
     font-size: 15px;
   }
 }
 
+/* Mobile View */
 @media only screen and (max-width: 425px) {
   .grid-item .time {
     font-size: 200%;

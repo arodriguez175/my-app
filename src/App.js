@@ -19,6 +19,7 @@ class App extends React.Component {
     this.state = {
       currentView: "daily",
       showModal: false,
+      // Current category of modal.
       currentCategory: "",
     };
 
@@ -33,13 +34,14 @@ class App extends React.Component {
 
   showModal = (activityTitle) => {
     this.setState({
-      showModal: !this.state.showModal,
+      showModal: !this.state.showModal, // set to "not false" to show modal
       currentCategory: activityTitle,
     });
   };
 
   render() {
     let previousLabel;
+    // Assigns the appropriate string depending on the value of currentView
     switch (this.state.currentView) {
       case "daily":
         previousLabel = "Previous Hours - ";
@@ -65,12 +67,14 @@ class App extends React.Component {
           <FontAwesomeIcon icon={faGithub} />
         </a>
 
+        {/* Modal component */}
         <UserInput
           show={this.state.showModal}
           onClose={() => this.setState({ showModal: false })}
           currentCategory={this.state.currentCategory}
         />
 
+        {/*Profile card */}
         <div className="grid-container">
           <div className="grid-item" id="profile-item">
             <Profile
@@ -79,9 +83,11 @@ class App extends React.Component {
             />
           </div>
 
+          {/* Activity cards */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div className="grid-item" key={item.activityType}>
+                {/* Card component with props for dynamic changes. */}
                 <Card
                   activityTitle={item.activityType}
                   time={item.currentHours}
@@ -109,6 +115,7 @@ class App extends React.Component {
   }
 }
 
+/* Data from daily, weekly, and monthly activity stats that my App component needs */
 function mapStateToProps(state) {
   const dailyActivityStats = calculateActivityStatsByCategory(
     state.activity.activityRecords,
