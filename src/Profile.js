@@ -23,12 +23,14 @@ class Profile extends React.Component {
 
         <div>
           <div className="profile-card-options">
+            {/* Map the daily, weekly, and monthly strings as buttons 
+            to prevent making three button onClick properties */}
             {views.map((view) => (
               <button
                 key={view}
                 className={view === this.props.currentView ? "current" : ""}
                 onClick={() => {
-                  changeView(view);
+                  changeView(view); // changeViewHandler
                 }}
               >
                 {formatToCapitalCase(view)}
