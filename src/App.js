@@ -29,6 +29,8 @@ class App extends React.Component {
     this.changeView = this.changeView.bind(this);
   }
 
+  /* For toggling the different options in the profile card 
+  to show hours for either daily, weekly, or monthly. */
   changeView(view) {
     this.setState({
       /* view will have a value of whatever Profile component passes: either daily,
@@ -45,7 +47,9 @@ class App extends React.Component {
   };
 
   render() {
-    /* For toggling the different options in the profile card. */
+    /* Assigns the appropriate text for the label that reads 
+    previous hours, last week, or last month depending on if 
+    a user chose to view the dashboard data from daily, weekly, or monthly */
     let previousLabel;
     // Assigns the appropriate string depending on the value of currentView
     switch (this.state.currentView) {
@@ -90,6 +94,8 @@ class App extends React.Component {
           </div>
 
           {/* Activity cards */}
+          {/* This uses activityStats object as a prop from mapStateToProps below */}
+          {/* Maps the activity stats specific to the state of the current view */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div className="grid-item" key={item.activityType}>
@@ -107,6 +113,7 @@ class App extends React.Component {
             );
           }) || (
             <React.Fragment>
+              {/* Mock data */}
               <div className="demo-data">
                 <p>No activity yet!</p>
                 <button onClick={this.props.populateWithMockData}>
