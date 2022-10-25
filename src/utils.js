@@ -9,7 +9,7 @@ export function formatToCapitalCase(word) {
 
 // This function calculates all hours for today
 export function calculateForDailyView(activityRecords, date) {
-  // Get the start and end of today's date
+  // Get the start and end of today's date time
   const startDate = new Date(date.getTime()); // creating a clone of the supplied date
   const endDate = new Date(date.getTime());
 
