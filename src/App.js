@@ -23,23 +23,29 @@ class App extends React.Component {
       currentCategory: "",
     };
 
+    /* changeViewHandler is passed from Profile.js to App.js and is 
+    operating with the state of the App component instead of the state 
+    from the Profile component */
     this.changeView = this.changeView.bind(this);
   }
 
   changeView(view) {
     this.setState({
+      /* view will have a value of whatever Profile component passes: either daily,
+      weekly, monthly if they are clicked. */
       currentView: view,
     });
   }
 
   showModal = (activityTitle) => {
     this.setState({
-      showModal: !this.state.showModal, // set to "not false" to show modal
+      showModal: !this.state.showModal, // Opposite of the pevious value
       currentCategory: activityTitle,
     });
   };
 
   render() {
+    /* For toggling the different options in the profile card. */
     let previousLabel;
     // Assigns the appropriate string depending on the value of currentView
     switch (this.state.currentView) {
@@ -116,6 +122,7 @@ class App extends React.Component {
 }
 
 /* Data from daily, weekly, and monthly activity stats that my App component needs */
+/* mapStateToProps allows some of the items from the state to be passed as props */
 function mapStateToProps(state) {
   const dailyActivityStats = calculateActivityStatsByCategory(
     state.activity.activityRecords,
@@ -132,6 +139,8 @@ function mapStateToProps(state) {
     activityCategories
   );
 
+  // mapStateToProps always returns an object.
+  // These object properties will appear inside props.
   return {
     activityStats: {
       daily: dailyActivityStats,
@@ -141,9 +150,19 @@ function mapStateToProps(state) {
   };
 }
 
+/* mapDispatchToProps allows some actions from the store to be used */
+// Only way to trigger a state change.
+/* Lets you create functions that dispatch when called, and pass those functions
+ as props to your component. */
 function mapDispatchToProps(dispatch) {
   return {
     populateWithMockData: () => dispatch(populateWithMockData()),
   };
 }
+
+/* To get my components to actually use and update the store for state, 
+the connect function is used. This connects my component to the store.
+It allows you to take the store that was provided by the Provider, 
+take the data it needs from the store as well as functions it can use to 
+dispatch actions to the store, and pass them over to the App component as props */
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,5 +1,7 @@
+// localStorage saves data in the current browser's local storage.
+
 /* loadState will look at the browser’s localStorage. 
-If there is a serialized string of the state, 
+If there is a serialized string of the "state" key, 
 it will parse it as JSON. */
 export const loadState = () => {
   try {
@@ -7,7 +9,7 @@ export const loadState = () => {
     if (serializedState === null) {
       return undefined;
     }
-    return JSON.parse(serializedState);
+    return JSON.parse(serializedState); // Turn from string into an object
   } catch (err) {
     return undefined;
   }

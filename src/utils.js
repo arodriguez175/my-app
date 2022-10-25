@@ -16,16 +16,21 @@ export function calculateForDailyView(activityRecords, date) {
   startDate.setHours(0, 0, 0, 0);
   endDate.setHours(23, 59, 59, 999);
 
+  /* Checks through each activity record and return only the activity date and time 
+  that are between the start date and end date. (Today) */
   const filteredActivityRecords = activityRecords.filter((activityRecord) => {
     // activityRecord.timestamp is a string, so transform it into a Date object
     const activityDate = new Date(activityRecord.timestamp);
 
-    // Check whether the timestamp of activityRecord is sometime within today's date
+    /* Check whether the timestamp of activityRecord is sometime 
+    within today's date and time */
     return activityDate > startDate && activityDate < endDate;
   });
 
   // Total hours entered for today
   let totalHours = 0;
+  /* Loop through each record from the filtered activity records, for each activity 
+  record add the different hours logged into a total sum */
   for (const record of filteredActivityRecords) {
     totalHours = record.hours + totalHours;
   }
@@ -40,19 +45,25 @@ export function calculateActivityStatsByCategory(
   activityCategories
 ) {
   // Holds my activity card hours separated by category
-  const hoursByCategory = []; // { "work": [...], "play": [...], "social": []}
+  const hoursByCategory = []; // [ "work": [...], "play": [...], "social": [...]]
 
   // For each category, run calculateForDailyView function
   for (const category of activityCategories) {
     // cycle 1: category = 'work'
+    // Return only record activity type that match category
     const activities = activityRecords.filter(
       (record) => record.activityType === category
     );
+
+    // Define date for today and yesterday
     const today = new Date();
     const tempDate = new Date();
     tempDate.setDate(tempDate.getDate() - 1);
+
+    // Turn into a string
     const yesterday = new Date(tempDate.toDateString());
 
+    // Pass activities and today
     const todayHours = calculateForDailyView(activities, today);
     const previousHours = calculateForDailyView(activities, yesterday);
 

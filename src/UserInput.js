@@ -44,6 +44,7 @@ function UserInput(props) {
             onChange={(date) => setStartDate(date)}
           />
 
+          {/* Logs and saves the user input */}
           <button
             className="enterButton"
             onClick={() => {
