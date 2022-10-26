@@ -34,7 +34,7 @@ class App extends React.Component {
   changeView(view) {
     this.setState({
       /* view will have a value of whatever Profile component passes: either daily,
-      weekly, monthly if they are clicked. */
+      weekly, monthly if one of the buttons are clicked. */
       currentView: view,
     });
   }
@@ -42,7 +42,7 @@ class App extends React.Component {
   showModal = (activityTitle) => {
     this.setState({
       showModal: !this.state.showModal, // Opposite of the pevious value
-      currentCategory: activityTitle,
+      currentCategory: activityTitle, // Make modal title match the activity selected
     });
   };
 
@@ -94,12 +94,13 @@ class App extends React.Component {
           </div>
 
           {/* Activity cards */}
-          {/* This uses activityStats object as a prop from mapStateToProps below */}
+          {/* this.props.activityStats uses activityStats object as a prop 
+          from mapStateToProps below */}
           {/* Maps the activity stats specific to the state of the current view */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div className="grid-item" key={item.activityType}>
-                {/* Card component with props for dynamic changes. */}
+                {/* Card component */}
                 <Card
                   activityTitle={item.activityType}
                   time={item.currentHours}

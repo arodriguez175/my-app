@@ -5,8 +5,13 @@ import "./Profile.css";
 
 class Profile extends React.Component {
   render() {
+    // Store the changeViewHandler prop inside a variable
     let changeView = this.props.changeViewHandler;
+
+    /* These will be used as option names for the buttons to change 
+    the dashbaord state */
     let views = ["daily", "weekly", "monthly"];
+
     return (
       <article className="profile-card">
         <div className="top">
@@ -28,9 +33,14 @@ class Profile extends React.Component {
             {views.map((view) => (
               <button
                 key={view}
+                /* If view matches the current view from the state, give 
+                this a className of "current" otherwise give this className 
+                an empty string */
                 className={view === this.props.currentView ? "current" : ""}
                 onClick={() => {
-                  changeView(view); // changeViewHandler
+                  /* Run my event handler that changes the state of the current view
+                   to either daily, weekly, or monthly */
+                  changeView(view);
                 }}
               >
                 {formatToCapitalCase(view)}

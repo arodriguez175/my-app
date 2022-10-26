@@ -12,6 +12,7 @@ function UserInput(props) {
   const [hours, setHours] = useState(0);
   const dispatch = useDispatch();
 
+  // Closes the modal
   const onClose = (e) => {
     // Uses onClose prop to change state of showModal to false to hide it
     props.onClose && props.onClose(e);
