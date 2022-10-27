@@ -76,6 +76,13 @@ class App extends React.Component {
           <FontAwesomeIcon icon={faGithub} />
         </a>
 
+        {/* Button for demo mock data */}
+        <div className="demo-data">
+          <button onClick={this.props.populateWithMockData}>
+            Add mock data
+          </button>
+        </div>
+
         {/* Modal component */}
         <UserInput
           show={this.state.showModal}
@@ -111,17 +118,7 @@ class App extends React.Component {
                 />
               </div>
             );
-          }) || (
-            <React.Fragment>
-              {/* Mock data */}
-              <div className="demo-data">
-                <p>No activity yet!</p>
-                <button onClick={this.props.populateWithMockData}>
-                  Add some mock data
-                </button>
-              </div>
-            </React.Fragment>
-          )}
+          })}
         </div>
       </div>
     );
