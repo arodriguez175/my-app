@@ -41,7 +41,7 @@ class App extends React.Component {
 
   showModal = (activityTitle) => {
     this.setState({
-      showModal: !this.state.showModal, // Opposite of the pevious value
+      showModal: !this.state.showModal, // Show modal by toggling opposite value
       currentCategory: activityTitle, // Make modal title match the activity selected
     });
   };
@@ -51,7 +51,6 @@ class App extends React.Component {
     previous hours, last week, or last month depending on if 
     a user chose to view the dashboard data from daily, weekly, or monthly */
     let previousLabel;
-    // Assigns the appropriate string depending on the value of currentView
     switch (this.state.currentView) {
       case "daily":
         previousLabel = "Previous Hours - ";

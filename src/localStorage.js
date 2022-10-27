@@ -1,13 +1,12 @@
-// localStorage saves data in the current browser's local storage as key/value pairs.
-
 /* loadState will look at the browser’s localStorage.
 If there is a serialized string of the "state" key, 
-it will parse it as JSON. Turning the serialized state into an object */
-export const loadState = () => {
-  /* Wrapped in a try/catch block in case user privacy mode does not allow using 
+it will parse it as JSON, Turning the serialized state into an object */
+
+/* Wrapped in a try/catch block in case user privacy mode does not allow using 
   localStorage, which can cause localStorage.getItem to fail and crash the app */
+export const loadState = () => {
   try {
-    /* Gets the value of "state" key from localStorage and sore it in this variable */
+    /* Gets the value of "state" key from localStorage and store it in this variable */
     const serializedState = localStorage.getItem("state");
 
     if (serializedState === null) {

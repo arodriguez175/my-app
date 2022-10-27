@@ -12,9 +12,12 @@ const store = configureStore({
   preloadedState: persistedState,
 });
 
+/* The saveState function is called inside the store.subscribe listener so it's called 
+everytime the store state changes. Throttle is being used so the saveState function
+does not get called more times than 1000 milliseconds, or 1 second. */
 store.subscribe(
   throttle(() => {
-    saveState(store.getState());
+    saveState(store.getState()); // passing current state tree to saveState function
   }, 1000)
 );
 
