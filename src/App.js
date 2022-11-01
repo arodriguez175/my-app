@@ -78,7 +78,7 @@ class App extends React.Component {
 
         {/* Button for demo mock data */}
         <div className="demo-data">
-          <button onClick={this.props.populateWithMockData}>
+          <button onClick={() => this.props.populateWithMockData()}>
             Add mock data
           </button>
         </div>
@@ -100,9 +100,9 @@ class App extends React.Component {
           </div>
 
           {/* Activity cards */}
+          {/* Shows the current data from my state for the current view */}
           {/* this.props.activityStats uses activityStats object as a prop 
           from mapStateToProps below */}
-          {/* Maps the activity stats specific to the state of the current view */}
           {this.props.activityStats[this.state.currentView]?.map((item) => {
             return (
               <div className="grid-item" key={item.activityType}>

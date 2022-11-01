@@ -1,17 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { activityStats } from "./mocks";
-
-const date = new Date();
-
-const newLoadedData = {
-  activityRecords: [
-    {
-      activityType: activityStats.activityType, // Get currentCategory
-      hours: 0, // number less than 24,
-      timestamp: date.toTimeString(),
-    },
-  ],
-};
+import { mockActivityRecords } from "./mocks";
 
 /* Redux slice is a peice of a Redux store that contains reducer logic 
 and actions for a single feature in the app */
@@ -27,11 +15,9 @@ export const activitySlice = createSlice({
   and returns the new state. */
   reducers: {
     populateWithMockData: (state, action) => {
-      state.activityStats = activityStats;
+      state.activityRecords = mockActivityRecords;
     },
-    newLoadedData: (state, action) => {
-      state.activityRecords = newLoadedData;
-    },
+
     saveActivityRecord: (state, action) => {
       // action variable will contain payload
       // inside payload, we'll have the following 3 variables:
