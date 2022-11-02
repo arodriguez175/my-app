@@ -1,32 +1,28 @@
-/* loadState will look at the browser’s localStorage.
-If there is a serialized string of the "state" key, 
-it will parse it as JSON, Turning the serialized state into an object */
-
-/* Wrapped in a try/catch block in case user privacy mode does not allow using 
-  localStorage, which can cause localStorage.getItem to fail and crash the app */
+// Loads the state from localStorage
 export const loadState = () => {
   try {
-    /* Gets the value of "state" key from localStorage and store it in this variable */
+    // Gets the state from the browser's local storage
     const serializedState = localStorage.getItem("state");
 
     if (serializedState === null) {
       return undefined;
     }
-    // Turns the JSON string of the value of "state" key into an object
-    // If something goes wrong, return undefined so the app won't crash
+    // If there is a serialized string of the state, returns it as an object
     return JSON.parse(serializedState);
   } catch (err) {
     return undefined;
   }
 };
 
+// Saves the state to localStorage
 export const saveState = (state) => {
   try {
-    /* The state is serialized into a string by using
-    JSON.stringify.
-    Will only work if the state is serializable. */
+    /* Takes the state and turns it into a JSON string so it can 
+    be saved in localStorage */
     const serializedState = JSON.stringify(state);
-    // Stores the "state" key and the value serializedState
+
+    /* Saves that state into localStorage and 
+    if an error happens, catch that error and ignore it */
     localStorage.setItem("state", serializedState);
   } catch (err) {
     // ignore write errors.
